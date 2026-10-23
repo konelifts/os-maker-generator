@@ -1,41 +1,30 @@
-# OS Maker
+# OS Maker HDMI Mockup
 
-A Python Tkinter app that generates a minimal x86 assembly bootloader project and a Windows 7-inspired desktop preview. This project is meant as a working starter kit for a simple OS mock-up and educational assembly project.
+This project is a Windows 7–inspired visual mockup made for a fullscreen HDMI display. It is intentionally a mockup only and is not a real bootable operating system.
 
-## What it generates
+## What it does
 
-- `boot.asm` — a minimal NASM boot sector that prints a boot message and halts.
-- `kernel.asm` — a simple 16-bit kernel stub that prints a welcome message.
-- `desktop.py` — a Python Tkinter window styled to resemble Windows 7.
-- `Makefile` — compiles the assembly files to binary output.
-- `run_qemu.sh` — launches QEMU to boot the generated image.
-- `README.md` — project usage notes.
+- Opens a fullscreen desktop in a blue Windows 7–style color palette
+- Shows a taskbar, Start button, desktop shortcuts, and a clock
+- Uses a 1920x1080 HDMI-style layout by default
+- Lets you preview the look of a Windows 7 desktop on an external display
 
 ## How to run
-
-1. Open a terminal in the repo root.
-2. Run:
 
 ```bash
 python3 os_maker.py
 ```
 
-3. Enter a project name and author.
-4. Click Generate OS.
-5. The app will create a new folder under `generated/`.
-6. To build the boot sector:
+## Notes
 
-```bash
-cd generated/<project_name>
-nasm -f bin -o boot.bin boot.asm
+This is a visual mockup only. It does not assemble real x86 code or boot as an operating system.
+
+## Generated mockup folder
+
+The app also writes a sample HDMI mockup into:
+
+```text
+generated/hdmi_windows7_mockup/
 ```
 
-7. To boot it with QEMU:
-
-```bash
-qemu-system-i386 -drive file=boot.bin,format=raw,if=floppy
-```
-
-## Important note
-
-This is a small, educational operating-system starter. It is not a full Windows 7 clone or a complete real OS. It demonstrates the boot process, assembly basics, and a graphical desktop mock-up inspired by Windows 7.
+That folder contains a simple `desktop.py` preview file and a README.
